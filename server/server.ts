@@ -12,7 +12,7 @@ async function startServer() {
   const PORT = 3000;
 
   // Ensure uploads directory exists
-  const uploadDir = path.join(__dirname, 'uploads');
+  const uploadDir = path.join(__dirname, '../uploads');
   if (!fs.existsSync(uploadDir)) {
     fs.mkdirSync(uploadDir);
   }
@@ -58,7 +58,7 @@ async function startServer() {
     app.use(vite.middlewares);
   } else {
     // Production static file serving (if built)
-    app.use(express.static(path.join(__dirname, 'dist')));
+    app.use(express.static(path.join(__dirname, '../dist')));
   }
 
   app.listen(PORT, '0.0.0.0', () => {
